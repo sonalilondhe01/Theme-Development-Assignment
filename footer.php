@@ -11,7 +11,7 @@
 
 ?>
 
-	<footer id="colophon" class="site-footer container">
+    <footer id="colophon" class="site-footer container">
         <hr>
         <div class="site-info">
             <div class = "footer-welcome-section">
@@ -41,7 +41,7 @@
                     <a id = "footer--text-highlighter" href="#"> rtCamp </a></span>
             </div>
         </div>
-	</footer><!-- #colophon -->
+    </footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

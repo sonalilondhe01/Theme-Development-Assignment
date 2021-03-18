@@ -13,8 +13,8 @@
 <!doctype html>
 <html <?php language_attributes(); ?>>
 <head>
-	<meta charset="<?php bloginfo( 'charset' ); ?>">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="<?php bloginfo('charset'); ?>">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -27,20 +27,20 @@
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
-	<?php wp_head(); ?>
+    <?php wp_head(); ?>
 </head>
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 <div id="page" class="site">
-		<header id="masthead" class="site-header">
-		<div class = "header--box">
+        <header id="masthead" class="site-header">
+        <div class = "header--box">
             <div class="container">
                 <div class="site-branding">
                     <img src="wp-content/themes/designflytheme/images/home/logo.png" class="header--logo">
 
                     <nav id="site-navigation" class="main-navigation">
-                        <!--			<button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">--><?php //esc_html_e( 'Primary Menu', 'designflytheme' ); ?><!--</button>-->
+                        <!--            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">--><?php //esc_html_e( 'Primary Menu', 'designflytheme' ); ?><!--</button>-->
                         <a class="site-navigation--menu" href="#">Home</a>
                         <a class="site-navigation--menu" href = "#">Services</a>
                         <a class="site-navigation--menu" href = "#">Portfolio</a>
@@ -109,4 +109,4 @@
 
             </div>
 
-	</header><!-- #masthead -->
+    </header><!-- #masthead -->

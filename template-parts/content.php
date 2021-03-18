@@ -10,9 +10,9 @@
 ?>
 
 <!--<article id="post---><?php //the_ID(); ?><!--" --><?php //post_class(); ?><!-->-->
-<!--	<header class="entry-header">-->
-<!--		--><?php
-//		if ( is_singular() ) :
+<!--    <header class="entry-header">-->
+<!--        --><?php
+//        if ( is_singular() ) :
 //            ?>
 <!--        <script>-->
 <!--            jQuery(document).ready(function() {-->
@@ -20,41 +20,41 @@
 <!--            });-->
 <!--        </script>-->
 <!--        <h1>Going to the place and making a case!</h1>-->
-<!--		else :-->
-<!--			the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );-->
-<!--		endif;-->
-<!--		?>-->
-<!--	</header><!-- .entry-header -->-->
+<!--        else :-->
+<!--            the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );-->
+<!--        endif;-->
+<!--        ?>-->
+<!--    </header><!-- .entry-header -->-->
 <!---->
-<!--	--><?php //designflytheme_post_thumbnail(); ?>
+<!--    --><?php //designflytheme_post_thumbnail(); ?>
 <!---->
-<!--<!--	<div class="entry-content">-->-->
-<!--<!--		-->--><?php
-////		the_content(
-////			sprintf(
-////				wp_kses(
-////					/* translators: %s: Name of current post. Only visible to screen readers */
-////					__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'designflytheme' ),
-////					array(
-////						'span' => array(
-////							'class' => array(),
-////						),
-////					)
-////				),
-////				wp_kses_post( get_the_title() )
-////			)
-////		);
+<!--<!--    <div class="entry-content">-->-->
+<!--<!--        -->--><?php
+////        the_content(
+////            sprintf(
+////                wp_kses(
+////                    /* translators: %s: Name of current post. Only visible to screen readers */
+////                    __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'designflytheme' ),
+////                    array(
+////                        'span' => array(
+////                            'class' => array(),
+////                        ),
+////                    )
+////                ),
+////                wp_kses_post( get_the_title() )
+////            )
+////        );
 ////
-////		wp_link_pages(
-////			array(
-////				'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'designflytheme' ),
-////				'after'  => '</div>',
-////			)
-////		);
-////		?>
-<!--<!--	</div><!-- .entry-content -->-->-->
+////        wp_link_pages(
+////            array(
+////                'before' => '<div class="page-links">' . esc_html__( 'Pages:', 'designflytheme' ),
+////                'after'  => '</div>',
+////            )
+////        );
+////        ?>
+<!--<!--    </div><!-- .entry-content -->-->-->
 <!---->
-<!--	<footer class="entry-footer">-->
-<!--		--><?php //designflytheme_entry_footer(); ?>
-<!--	</footer><!-- .entry-footer -->-->
+<!--    <footer class="entry-footer">-->
+<!--        --><?php //designflytheme_entry_footer(); ?>
+<!--    </footer><!-- .entry-footer -->-->
 <!--</article><!-- #post---><?php //the_ID(); ?><!-- -->-->
