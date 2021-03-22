@@ -29,7 +29,8 @@
                     <p class = "footer--text">Street 21 Planet, A-11, dapibus tristique, 123 551<br />
                         Tel: 123 4567890; Fax: 123 456789<br />
                         Email: contactus@designfly.com</p>
-                    <img class= "footer--social-img" src = "wp-content\themes\designflytheme\images\home\social.png"
+                    <img class= "footer--social-img"
+                         src = "/wordpress_theme_development/wp-content\themes\designflytheme\images\home\social.png"
                          alt = "social media">
                 </div>
             </div>

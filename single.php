@@ -10,7 +10,7 @@
 get_header();
 ?>
 
-    <main id="primary" class="site-main">
+    <main id="primary" class="site-main container">
 
         <?php
         while ( have_posts() ) :
@@ -23,17 +23,10 @@ get_header();
                 'next_text' => '<span class="nav-subtitle">' . esc_html__('Next:', 'designflytheme') . '</span> <span class="nav-title">%title</span>',
                 )
             );
-
-            // If comments are open or we have at least one comment, load up the comment template.
-            if (comments_open() || get_comments_number() ) :
-                comments_template();
-            endif;
-
         endwhile; // End of the loop.
         ?>
 
     </main><!-- #main -->
 
 <?php
-get_sidebar();
 get_footer();

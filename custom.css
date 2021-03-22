@@ -3,6 +3,8 @@ body{
     max-width: 1500px;
     /*background-color: #DCDCDC;*/
 }
+/*header template header.php */
+
 .header--box{
     height: auto;
     min-height: 105px;
@@ -11,7 +13,8 @@ body{
 }
 .container{
     margin: 0 auto;
-    width: 1000px;
+    width: auto;
+    max-width: 1000px;
 
 }
 .header--logo{
@@ -72,8 +75,6 @@ body{
     color: #000000;
     margin-bottom: 3px;
 }
-/*.header--hero-image{*/
-/*}*/
 .header--hero-image-text{
     position: absolute;
     top: 40vh;
@@ -155,6 +156,9 @@ body{
     max-width: 300px;
     word-wrap: break-word;
 }
+
+
+/* home page css */
 .design-section{
     margin-top: 20px;
 }
@@ -201,6 +205,8 @@ body{
     border-radius: 10px;
 }
 
+
+/* footer template footer.php */
 .footer--header{
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
@@ -243,6 +249,589 @@ body{
 footer{
     margin-bottom: 20px;
 }
+
+/* single post page css */
+
+.post-header{
+    border-bottom:  1px solid #62585f;
+}
+.post-title{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 35px;
+    color: #62585f;
+    text-shadow: 2px 2px #ffffff;
+}
+.post-details{
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    color: #62585f;
+}
+
+.post-highlight{
+    color: #ef4632;
+}
+.post-content{
+    margin-top: 20px;
+}
+.post-text{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #62585f;
+    line-height: 21px;
+}
+.post-img{
+    width: 620px;
+    height:350px;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.post-section-container{
+    margin-left: -30px;
+}
+.post-section {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #62585f;
+}
+
+/*Comment template css comments.php*/
+.comments--title{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #62585f;
+    margin-top: 0;
+}
+.comment-title-div{
+    border-bottom:  1px solid #62585f;
+}
+.comment-details{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    color: #62585f;
+}
+.comment-details a{
+    color: #ef4634;
+}
+.comment-content{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #62585f;
+    line-height: 21px;
+}
+.comment-list{
+    margin-top: 20px;
+}
+.comment-list-div{
+    margin-bottom: 10px;
+    border-bottom:  1px solid #62585f;
+}
+.comment-div{
+    margin-bottom: 10px;
+}
+#reply-title{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    color: #62585f;
+}
+#submit{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #ffffff;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #222222;
+    float: right;
+    margin-top: 10px;
+}
+.comment-form-comment{
+    max-width: 613px;
+    height: 90px;
+    background-color: #ffffff;
+    border: 1px solid #62585f;
+}
+.comment-name-section label,
+.comment-email-section label,
+.comment-website-section label{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #62585f;
+}
+.comment-name-section input,
+.comment-email-section input,
+.comment-website-section input{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    width: 195px;
+    height: 30px;
+    background-color: #ffffff;
+    border: 1px solid #62585f;
+}
+.comment-name-section,
+.comment-email-section,
+.comment-website-section {
+    width: auto;
+    margin-top: 10px;
+    display: inline-block;
+}
+.comment-name-section,
+.comment-email-section{
+    margin-right: 12px;
+}
+/* right division on single post page*/
+.single-post-right-div{
+    margin-left: 20px;
+}
+
+
+/* sidebar css custom_sidebar.php */
+.sidebar-container{
+    margin-top: 25px;
+}
+.sidebar-container h3 {
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    color: #62585f;
+    text-shadow: 2px 2px #ffffff;
+}
+
+.sidebar-header{
+    border-bottom: 1px solid #62585f;
+    max-width: 270px;
+    margin-bottom: 10px;
+}
+.portfolio-images{
+    margin-top: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.portfolio--img{
+    height: 60px;
+    width: 60px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.sidebar-margin-top{
+    margin-top:30px;
+}
+.related-post--img{
+    height: 45px;
+    width: 45px;
+    border-radius: 3px;
+}
+.related-post-text{
+    margin-left: 15px;
+}
+.post-content-tittle{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #62585f;
+    line-height: 21px;
+    margin-left: 0;
+}
+
+.post-content-tittle:hover{
+    color: #ef4634;
+}
+.related-post-single{
+    display: flex;
+}
+/* archive sidebar css */
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+li{
+    margin-left: 15px;
+    padding: 0;
+}
+li:before {
+
+    content: "\25BA \0020";
+}
+
+/*follow us sidebar css */
+.follow-us-sidebar-header{
+    display: flex;
+   justify-content: space-between;
+}
+#btn-follow-us{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    height: fit-content;
+    align-self: center;
+    float: right;
+    margin-top: 10px;
+}
+.icon-twitter{
+    color: #1da1f2;
+}
+.avatar--img{
+    height: 50px;
+    width: 50px;
+}
+.follow-us-text{
+    margin-left: 5px;
+}
+.follow-us-activity-time{
+    position: absolute;
+    right: 15px;
+}
+.follow-us-user-info{
+    display: flex;
+}
+
+/*find us on facebook sidebar*/
+.facebook-box-container{
+    width: auto;
+    max-width: 270px;
+    border-bottom: 1px solid #222222;
+}
+.facebook-box-header{
+    border: 1px solid #222222;
+    background-color: #4267B2;
+    color: #ffffff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+.facebook-box-header p{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    margin-bottom: 0;
+}
+
+.facebook-box-header h6{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+}
+.facebook-designfly-section{
+    padding-right: 10px;
+    padding-left: 10px;
+    border-left: 1px solid #222222;
+    border-right: 1px solid #222222;
+}
+.facebook-designfly-top-container{
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+}
+.designfly-logo{
+    margin: 10px;
+    width: 30px;
+    height: 30px;
+}
+.facebook-like-right-section{
+    display:inline-flex;
+    flex-direction: column;
+}
+.facebook-like-right-section h6{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    color:  #4267B2;
+}
+.facebook-designfly-section p, span{
+    display: inline;
+    margin-left: 5px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+}
+.facebook-like-right-section button{
+    font-family: "Open Sans", sans-serif;
+    font-size: 12px;
+}
+.facebook-single-user-div{
+    position: relative;
+}
+.facebook-user-img{
+    width: 50px;
+    height: 50px;
+}
+.facebook-designfly-middle-container{
+    padding-top: 5px;
+    padding-bottom: 5px;
+    border-bottom: 1px solid rgba(0,0,0,0.3);
+    max-height: 120px;
+    overflow-y: scroll;
+}
+.facebook-designfly-middle-container span{
+    display: block;
+    width: fit-content;
+    text-align: center;
+}
+.facebook-users{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.facebook-icon-div{
+    margin-top: 10px;
+    padding-bottom: 5px;
+}
+.facebook-icon-div p{
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    color:  #4267B2;
+}
+.facebook-icon{
+    transform: scale(2);
+    margin-left: 5px;
+    margin-right: 10px;
+}
+
+
+/*Blog page css */
+.blog-container-left{
+    margin-left: -12px;
+    margin-top: 20px;
+}
+.blog-single{
+    margin-top: 20px;
+}
+.blog-list-header{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 45px;
+    color: #62585f;
+    text-shadow: 2px 2px #ffffff;
+    border-bottom: 1px solid #62585f;
+    max-width: 620px;
+}
+.blog-header-box h4{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 25px;
+}
+.blog-header-box-date{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    color: #ffffff;
+    margin-left: 20px;
+    margin-right: 20px;
+    margin-top: 5px;
+}
+.blog-header-box-date p{
+    font-size: 25px;
+}
+.blog-header-box-date span{
+    font-size: 14px;
+    display: block;
+}
+.blog-header-box-title h4{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+    color: #ffffff;
+    margin-left: 20px;
+}
+.blog-header-box-title{
+    border-left: 1px solid rgba(255,255,255,0.3);
+    align-self: center;
+}
+.blog-header-box-container{
+    width: auto;
+    max-width: 620px;
+    height: 50px;
+    margin-bottom: 15px;
+    background-color: #222222;
+    border-radius: 3px;
+    border: 1px solid #ffffff;
+    display: flex;
+}
+.blog-header-box-container:hover{
+    background-color: #ef4634;
+}
+.post-image{
+    width: 220px;
+    height: 153px;
+    border-radius: 10px;
+}
+.post-comment{
+    float: right;
+}
+.post-data{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+    display: flex;
+}
+.post-text-content{
+    margin-left: 10px;
+}
+.post-text-content p, .blog-header-box-date p{
+    margin: 0;
+    margin-bottom: 7px;
+    line-height: 21px;
+}
+.post-header-content{
+    border-bottom: 1px solid #62585f;
+    margin-bottom: 10px;
+}
+.post-read-more{
+    font-size: 14px;
+    color: #ef4634;
+}
+.post-pagination-buttons{
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.post-pagination-button{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    display: block;
+    color: #222222;
+    border-radius: 3px;
+    background-color: #ffffff;
+    outline: none;
+    border: none;
+    justify-self: center;
+}
+.post-pagination-button:hover{
+    color: #ffffff;
+    background-color: #ef4634;
+}
+#pagination-arrow-button{
+    background-color: #FFFFFF;
+    border: none;
+    outline: none;
+}
+/* custom post type template single-portfolio.php*/
+#portfolio-post-header{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+#portfolio-post-header h1{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 45px;
+    color: #62585f;
+    text-shadow: 2px 2px #ffffff;
+}
+.portfolio-post-header--buttons{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    color: #ffffff;
+    padding: 10px;
+    background-color: #222222;
+    border-radius: 5px;
+    }
+.portfolio-post-header--buttons:hover{
+    background-color: #ef4634;
+}
+#portfolio-post-image-container{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+.portfolio-post--img{
+    border-radius: 10px;
+    height: 210px;
+    width: 315px;
+    margin-top: 15px;
+
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+.hover-style-image-container{
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+
+}
+#portfolio-post-single-image-container{
+    position: relative;
+    width: fit-content;
+}
+#portfolio-post-single-image-container:hover .portfolio-post--img {
+    filter: opacity(0.5) drop-shadow(0 0 0 black);
+}
+
+#portfolio-post-single-image-container:hover .hover-style-image-container{
+    opacity: 1;
+}
+
+#hover-image-icon{
+
+}
+.thickbox-link{
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    color: #ffffff;
+    text-decoration: none;
+}
+.thickbox-link:hover{
+    color: #ffffff;
+    text-decoration: none;
+}
+#thickbox-inline-division1, #thickbox-inline-division2,
+#thickbox-inline-division3, #thickbox-inline-division4,
+#thickbox-inline-division5, #thickbox-inline-division6,
+#thickbox-inline-division7, #thickbox-inline-division8,
+#thickbox-inline-division9, #thickbox-inline-division10,
+#thickbox-inline-division11, #thickbox-inline-division12,
+#thickbox-inline-division13, #thickbox-inline-division14,
+#thickbox-inline-division15{
+    display: none;
+}
+.thickbox-slider-arrow{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+.portfolio-post--img-thickbox{
+    border-radius: 10px;
+    height: 400px;
+    width: 100%;
+    margin: 5px;
+}
+.thickbox-slider-arrow p{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 300;
+    font-size: 18px;
+    color: #222222;
+    align-self: center;
+}
+.slider-arrows{
+    filter: invert(100%);
+    -webkit-filter: invert(100%);
+    width: 22px;
+    height: 22px;
+    opacity: 0.5;
+}
+
+
+
 @media screen and (min-width: 1030px){
     .site-branding{
         display: inline-flex;
@@ -282,5 +871,14 @@ footer{
     }
     .footer-contact-section{
         margin-left: 100px;
+    }
+    /* custom post tye template single-portfolio.php */
+    #portfolio-post-header{
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+    #portfolio-post-image-container{
+        flex-direction: row;
     }
 }

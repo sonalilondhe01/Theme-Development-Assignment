@@ -129,7 +129,7 @@ function designflytheme_widgets_init()
         array(
         'name'          => esc_html__('Sidebar', 'designflytheme'),
         'id'            => 'sidebar-1',
-        'description'   => esc_html__('Add widgets here.', 'designflytheme'),
+        'description'   => esc_html__('Portfolio.', 'designflytheme'),
         'before_widget' => '<section id="%1$s" class="widget %2$s">',
         'after_widget'  => '</section>',
         'before_title'  => '<h2 class="widget-title">',
@@ -138,6 +138,12 @@ function designflytheme_widgets_init()
     );
 }
 add_action('widgets_init', 'designflytheme_widgets_init');
+
+//add_action('widgets_init', 'designflytheme_portfolio_sidebar');
+//
+//function designflytheme_portfolio_sidebar{
+//
+//}
 
 /**
  * Enqueue scripts and styles.
@@ -155,6 +161,7 @@ function designflytheme_scripts()
     }
 }
 add_action('wp_enqueue_scripts', 'designflytheme_scripts');
+
 
 /**
  * Implement the Custom Header feature.
@@ -183,3 +190,140 @@ if (defined('JETPACK__VERSION') ) {
     include get_template_directory() . '/inc/jetpack.php';
 }
 
+function designflytheme_comment(){
+    ?>
+   <div class="comment-div">
+       <p class = "comment-details">
+           <a  href="#">John Richards</a> said on
+           <time> October 12, 2012 at 11:49am</time>
+       </p>
+       <p class = "comment-content">
+           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at justo at
+           enim facilisis auctor vitae id erat. Integer eu justo cursus, ullamcorper tellus nec,
+           consectetur eros. Cras suscipit, lorem id convallis rhoncus, orci augue aliquet elit,
+           in mollis ligula lectus vel nisi. Aenean sit amet blandit lorem. Phasellus tempor neque nunc,
+           sit amet condimentum est fringilla sit amet. Nam vitae mi fermentum, lobortis justo non, feugiat mi.
+           Maecenas tincidunt,
+           augue quis eleifend rhoncus, lorem arcu maximus magna, ut molestie nibh nibh eu massa.
+       </p>
+   </div>
+    <div class="comment-div">
+        <p class = "comment-details">
+            <a  href="#">Peter Harrison</a> said on
+            <time> October 12, 2012 at 11:49am</time>
+        </p>
+        <p class = "comment-content">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras at justo at
+            enim facilisis auctor vitae id erat. Integer eu justo cursus, ullamcorper tellus nec.
+        </p>
+    </div>
+    <div class="comment-div">
+        <i class="fal fa-comment-alt-dots"></i>
+        <p class = "comment-details">
+            <a  href="#">Author</a> said on
+            <time> October 12, 2012 at 11:49am</time>
+        </p>
+        <p class = "comment-content">
+             Aenean sit amet blandit lorem. Phasellus tempor neque nunc,
+            sit amet condimentum est fringilla sit amet. Nam vitae mi fermentum, lobortis justo non.
+        </p>
+    </div>
+    <?php
+}
+
+
+/**
+ * Look custom post typ function 'add_custom_post_type_portfolio
+ */
+add_action('init', 'register_custom_post_type_portfolio');
+
+function register_custom_post_type_portfolio() {
+
+    $labels = array(
+        'name'                  => _x(
+            'Portfolio',
+            'Post type general name',
+            'textdomain'
+        ),
+        'singular_name'         => _x(
+            'Portfolio',
+            'Post type singular name',
+            'textdomain'
+        ),
+        'menu_name'             => _x(
+            'Portfolio',
+            'Admin Menu text',
+            'textdomain'
+        ),
+        'name_admin_bar'        => _x(
+            'Portfolio',
+            'Add New on Toolbar',
+            'textdomain'
+        ),
+        'add_new'               => __(
+            'Add New ',
+            'textdomain'
+        ),
+        'add_new_item'          => __(
+            'Add New Portfolio',
+            'textdomain'
+        ),
+        'new_item'              => __(
+            'New Portfolio',
+            'textdomain'
+        ),
+        'edit_item'             => __(
+            'Edit Portfolio',
+            'textdomain'
+        ),
+        'view_item'             => __(
+            'View Portfolio',
+            'textdomain'
+        ),
+        'all_items'             => __(
+            'All Portfolio',
+            'textdomain'
+        ),
+        'search_items'          => __(
+            'Search Portfolio',
+            'textdomain'
+        ),
+        'parent_item_colon'     => __(
+            'Parent Portfolio:',
+            'textdomain'
+        ),
+        'not_found'             => __(
+            'No Portfolio found.',
+            'textdomain'
+        ),
+        'not_found_in_trash'    => __(
+            'No Portfolio found in Trash.',
+            'textdomain'
+        ),
+    );
+
+    $args = array(
+        'labels'             => $labels,
+        'public'             => true,
+        'publicly_queryable' => true,
+        'show_ui'            => true,
+        'show_in_menu'       => true,
+        'query_var'          => true,
+        'rewrite'            => array( 'slug' => 'portfolio' ),
+        'capability_type'    => 'post',
+        'has_archive'        => true,
+        'hierarchical'       => false,
+        'supports'           => array(
+            'title',
+            'editor',
+            'author',
+            'thumbnail',
+            'excerpt',
+            'comments'
+        ),
+        'menu_position'      => 5,
+
+    );
+    register_post_type('Portfolio', $args);
+
+}

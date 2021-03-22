@@ -26,7 +26,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,800;1,700&display=swap"
           rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <?php wp_head(); ?>
 </head>
 
@@ -37,7 +37,7 @@
         <div class = "header--box">
             <div class="container">
                 <div class="site-branding">
-                    <img src="wp-content/themes/designflytheme/images/home/logo.png" class="header--logo">
+                    <img src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/logo.png" class="header--logo">
 
                     <nav id="site-navigation" class="main-navigation">
                         <!--            <button class="menu-toggle" aria-controls="primary-menu" aria-expanded="false">--><?php //esc_html_e( 'Primary Menu', 'designflytheme' ); ?><!--</button>-->
@@ -52,7 +52,7 @@
                         <input type="text" class="header--serchbox-input">
                         <button class = "header--btn-search">
                             <img class="header--search-icon"
-                                 src="wp-content/themes/designflytheme/images/home/search-icon.png">
+                                 src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/search-icon.png">
                         </button>
                     </div>
                 </div><!-- .site-branding -->
@@ -64,7 +64,7 @@
 <!--                         src="wp-content/themes/designflytheme/images/home/slider-image.png">-->
                  <div>
                      <img class = "hero--left-slider-arrows"
-                          src="wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
+                          src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
                      <div class="header--hero-image-text">
                          <h1 id="header--hero-image-header">Gearing up the ideas</h1>
                          <p id="header--hero-image-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet faucibus
@@ -72,7 +72,7 @@
                              Donec vitae ex ipsum.</p>
                      </div>
                      <img class = "hero--right-slider-arrows"
-                          src="wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
+                          src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
                  </div>
 
                 </div>
@@ -80,7 +80,7 @@
             <div class="header--feature-section">
                 <div class="header--feature-container container">
                     <div class="header--feature-section--single-feature">
-                        <img class="header--feature-section-img" src="wp-content/themes/designflytheme/images/home/leaf-icon.png">
+                        <img class="header--feature-section-img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/leaf-icon.png">
                         <div class="header--feature-section-text">
                             <h5 class="header--feature-header">Advertising</h5>
                             <p class="header--feature-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet faucibus
@@ -88,7 +88,7 @@
                         </div>
                     </div>
                     <div class="header--feature-section--single-feature">
-                        <img class="header--feature-section-img" src="wp-content/themes/designflytheme/images/home/mobile-icon.png">
+                        <img class="header--feature-section-img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/mobile-icon.png">
                         <div class="header--feature-section-text">
                             <h5 class="header--feature-header">Multimedia</h5>
                             <p class="header--feature-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet faucibus
@@ -96,7 +96,7 @@
                         </div>
                     </div>
                     <div class="header--feature-section--single-feature">
-                        <img class="header--feature-section-img" src="wp-content/themes/designflytheme/images/home/camera-icon.png">
+                        <img class="header--feature-section-img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/camera-icon.png">
                         <div class="header--feature-section-text">
                             <h5 class="header--feature-header">Photography</h5>
                             <p class="header--feature-desc">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris aliquet faucibus
