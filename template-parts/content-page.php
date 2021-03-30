@@ -14,12 +14,20 @@
         <button id="design--btn-view-all">View all</button>
     </div>
     <div class ="design-section--image-container">
-        <img class ="design--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-1.png">
-        <img class ="design--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-2.png">
-        <img class ="design--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-3.png">
-        <img class ="design--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-4.png">
-        <img class ="design--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-5.png">
-        <img class ="design--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-6.png">
+        <?php
+        $args = array (
+            'posts_per_page' => 6
+        );
+        $wp_query = new WP_Query($args);
+        if ($wp_query->have_posts()) :
+        while ($wp_query->have_posts()) :
+        $wp_query->the_post();
+        ?>
+        <img class ="design--img" src="<?php the_post_thumbnail_url();?>">
+        <?php
+        endwhile;
+        endif;
+        ?>
     </div>
 </div>
-
+<?php get_footer(); ?>

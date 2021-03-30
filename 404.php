@@ -53,7 +53,6 @@ get_header();
 
             </div><!-- .page-content -->
         </section><!-- .error-404 -->
-
     </main><!-- #main -->
 
 <?php

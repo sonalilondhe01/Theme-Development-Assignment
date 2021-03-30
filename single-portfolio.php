@@ -1,287 +1,76 @@
 <?php
 get_header();
 ?>
- <script>
-            jQuery(document).ready(function() {
-                $(".header--hero-section").hide();
-            })();
-        </script>
 <div class="container">
     <div id="portfolio-post-header">
         <h1>D'SIGN IS THE SOUL</h1>
-        <div>
-            <button class="portfolio-post-header--buttons">Advertising</button>
-            <button class="portfolio-post-header--buttons">Multimedia</button>
-            <button class="portfolio-post-header--buttons">Photography</button>
-        </div>
+            <div id="portfolio-category-container">
+                <?php
+                $categories = get_categories(array(
+                        'hide_empty' => false));
+                foreach ( $categories as $category ) {
+                    ?>
+                    <a
+                            href="<?php echo esc_url(  get_category_link( $category->term_id ) ); ?>"
+                            role="button"
+                            class="portfolio-post-header--buttons">
+                        <?php esc_html_e( $category->name ); ?>
+                    </a>
+                    <?php
+                }
+                ?>
+    </div>
     </div>
     <div id ="portfolio-post-image-container">
         <!--        image 1-->
-        <div id = "portfolio-post-single-image-container">
+            <?php  $paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : '1';
+            $args = array(
+                'post_type'      => 'post',
+                'post_status'    => 'publish',
+                'posts_per_page' => 5,
+                'paged'          => $paged,
+                'nopaging'       => false,
+            );
+            $wp_query = new WP_Query($args);
+            if ($wp_query->have_posts()) :
+            while ($wp_query->have_posts()) :
+            $wp_query->the_post();
+//            ?>
+                <div id = "portfolio-post-single-image-container">
             <?php add_thickbox(); ?>
-        <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-1.png">
-               <div id="thickbox-inline-division1">
-                   <img id = "image1" class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-1.png">
-                  <div class="thickbox-slider-arrow">
-                      <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                      <p>Lorem ipsum dolor sit amet</p>
-                      <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                   </div>
-               </div>
-                <div class="hover-style-image-container">
-                    <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                    <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division1" class="thickbox thickbox-link" >View image</a>
+            <img class ="portfolio-post--img" src="<?php the_post_thumbnail_url();?>">
+            <div id="thickbox-inline-division1">
+                <div class="tb-close-btn-div"  style="background: #fff; margin-left: -3px;">
+                    <button type="button" id="TB_closeWindowButton"
+                            style="background: #fff; margin-left: -10px;">
+                        <span class="screen-render-text">Close</span>
+                        <span class="tb-close-icon"></span>
+                    </button>
                 </div>
-        </div>
-
-        <!--        image 2-->
-        <div id = "portfolio-post-single-image-container">
-            <?php add_thickbox(); ?>
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-2.png">
-            <div id="thickbox-inline-division2">
-                <img class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-2.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
+                <div class="tb-img-div">
+                    <img class ="portfolio-post--img-thickbox" src="<?php the_post_thumbnail_url();?>">
+                    <div class="thickbox-slider-arrow">
+                        <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
+                        <p><?php the_title();?></p>
+                        <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
+                    </div>
                 </div>
             </div>
             <div class="hover-style-image-container">
                 <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division2" class="thickbox thickbox-link" >View image</a>
+                <a href="#TB_inline?&width=600&height=600&inlineId=thickbox-inline-division1" class="thickbox thickbox-link" >View image</a>
             </div>
         </div>
-
-        <!--        image 3-->
-        <div id = "portfolio-post-single-image-container">
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-3.png">
-            <div id="thickbox-inline-division3">
-                <img  class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-3.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                </div>
+        <?php
+        endwhile;
+                wp_reset_postdata();
+        endif;   ?>
             </div>
-            <div class="hover-style-image-container">
-                <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division3" class="thickbox thickbox-link" >View image</a>
-            </div>
-        </div>
-
-        <!--        image 4-->
-        <div id = "portfolio-post-single-image-container">
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-4.png">
-            <div id="thickbox-inline-division4">
-                <img class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-4.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                </div>
-            </div>
-            <div class="hover-style-image-container">
-                <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division4" class="thickbox thickbox-link" >View image</a>
-            </div>
-        </div>
-
-        <!--        image 5-->
-        <div id = "portfolio-post-single-image-container">
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-5.png">
-            <div id="thickbox-inline-division5">
-                <img  class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-5.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                </div>
-            </div>
-            <div class="hover-style-image-container">
-                <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division5" class="thickbox thickbox-link" >View image</a>
-            </div>
-        </div>
-
-        <!--        image 6-->
-        <div id = "portfolio-post-single-image-container">
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-6.png">
-            <div id="thickbox-inline-division6">
-                <img  class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-6.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                </div>
-            </div>
-            <div class="hover-style-image-container">
-                <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division6" class="thickbox thickbox-link" >View image</a>
-            </div>
-        </div>
-
-        <!--        image 7-->
-        <div id = "portfolio-post-single-image-container">
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-1.png">
-            <div id="thickbox-inline-division7">
-                <img  class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-1.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                </div>
-            </div>
-            <div class="hover-style-image-container">
-                <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division7" class="thickbox thickbox-link" >View image</a>
-            </div>
-        </div>
-
-        <!--        image 8-->
-        <div id = "portfolio-post-single-image-container">
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-2.png">
-            <div id="thickbox-inline-division8">
-                <img  class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-2.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                </div>
-            </div>
-            <div class="hover-style-image-container">
-                <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division8" class="thickbox thickbox-link" >View image</a>
-            </div>
-        </div>
-
-        <!--        image 9-->
-        <div id = "portfolio-post-single-image-container">
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-2.png">
-            <div id="thickbox-inline-division9">
-                <img  class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-2.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                </div>
-            </div>
-            <div class="hover-style-image-container">
-                <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division9" class="thickbox thickbox-link" >View image</a>
-            </div>
-        </div>
-
-        <!--        image 10-->
-        <div id = "portfolio-post-single-image-container">
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-4.png">
-            <div id="thickbox-inline-division10">
-                <img  class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-4.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                </div>
-            </div>
-            <div class="hover-style-image-container">
-                <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division10" class="thickbox thickbox-link" >View image</a>
-            </div>
-        </div>
-
-        <!--        image 11-->
-        <div id = "portfolio-post-single-image-container">
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-5.png">
-            <div id="thickbox-inline-division11">
-                <img  class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-5.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                </div>
-            </div>
-            <div class="hover-style-image-container">
-                <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division11" class="thickbox thickbox-link" >View image</a>
-            </div>
-        </div>
-
-        <!--        image 12-->
-        <div id = "portfolio-post-single-image-container">
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-6.png">
-            <div id="thickbox-inline-division12">
-                <img  class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-6.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                </div>
-            </div>
-            <div class="hover-style-image-container">
-                <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division12" class="thickbox thickbox-link" >View image</a>
-            </div>
-        </div>
-
-        <!--        image 13-->
-        <div id = "portfolio-post-single-image-container">
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-1.png">
-            <div id="thickbox-inline-division13">
-                <img  class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-1.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                </div>
-            </div>
-            <div class="hover-style-image-container">
-                <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division13" class="thickbox thickbox-link" >View image</a>
-            </div>
-        </div>
-
-        <!--        image 14-->
-        <div id = "portfolio-post-single-image-container">
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-2.png">
-            <div id="thickbox-inline-division14">
-                <img  class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-2.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                </div>
-            </div>
-            <div class="hover-style-image-container">
-                <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division14" class="thickbox thickbox-link" >View image</a>
-            </div>
-        </div>
-
-        <!--        image 15-->
-        <div id = "portfolio-post-single-image-container">
-            <img class ="portfolio-post--img" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-3.png">
-            <div id="thickbox-inline-division15">
-                <img class ="portfolio-post--img-thickbox" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-3.png">
-                <div class="thickbox-slider-arrow">
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/left-slider-arrows.png">
-                    <p>Lorem ipsum dolor sit amet</p>
-                    <img class= "slider-arrows" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/right-slider-arrows.png">
-                </div>
-            </div>
-            <div class="hover-style-image-container">
-                <img id = "hover-image-icon" src="/wordpress_theme_development/wp-content/themes/designflytheme/images/favicon.ico">
-                <a href="#TB_inline?&width=600&height=550&inlineId=thickbox-inline-division15" class="thickbox thickbox-link" >View image</a>
-            </div>
-        </div>
-
+    <div style="margin: 0 auto; display: block;">
+        <!-- Pagination bar: functions.php-->
+        <?php pagination_bar( $wp_query ); ?>
     </div>
-    <div class="post-pagination-buttons">
-        <button class="post-pagination-button">1</button>
-        <button class="post-pagination-button">2</button>
-        <button class="post-pagination-button">3</button>
-        <button id="pagination-arrow-button"><img
-                    src="/wordpress_theme_development/wp-content/themes/designflytheme/images/other pages/pagination-arrow.png">
-        </button>
-    </div>
+
 </div>
-<?php
-get_footer();?>
+    <?php
+    get_footer();?>

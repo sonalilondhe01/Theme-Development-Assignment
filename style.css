@@ -776,6 +776,8 @@ textarea {
 .bypostauthor {
     display: block;
 }
+.commentlist .bypostauthor {border-top: 10px solid #e18728;}
+.commentlist li ul.children li.bypostauthor {border-top: 10px solid #e18728;}
 
 /* Widgets
 --------------------------------------------- */

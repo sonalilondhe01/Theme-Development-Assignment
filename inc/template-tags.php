@@ -127,7 +127,6 @@ if (! function_exists('designflytheme_post_thumbnail') ) :
         if (post_password_required() || is_attachment() || ! has_post_thumbnail() ) {
             return;
         }
-
         if (is_singular() ) :
             ?>
 

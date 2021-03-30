@@ -1,7 +1,6 @@
 body{
     margin: 0 auto;
     max-width: 1500px;
-    /*background-color: #DCDCDC;*/
 }
 /*header template header.php */
 
@@ -15,8 +14,8 @@ body{
     margin: 0 auto;
     width: auto;
     max-width: 1000px;
-
 }
+
 .header--logo{
     width: 150px;
     height: auto;
@@ -24,20 +23,22 @@ body{
 .site-branding{
     padding-top: 20px;
 }
-#site-navigation a:hover{
-    color: #ffffff;
+
+.current {
     background: #ef4634;
     border-radius: 3px;
 }
 #site-navigation a{
     color: #222222;
-}
+} 
+
 .site-navigation--menu{
     font-family: 'Open Sans',sans-serif;
     font-weight: 700;
     font-size: 14px;
     display: block;
-    width: 65px;
+    width: fit-content;
+    padding: 10px;
     height: 30px;
     margin: 10px;
     text-align: center;
@@ -55,7 +56,7 @@ body{
     background: transparent;
     height: fit-content;
     margin-top: -5px;
-    margin-left: 5px;
+    margin-left: -5px;
     border: none;
     outline: none;
 }
@@ -82,21 +83,19 @@ body{
     right: 0;
     bottom: 0;
 }
+.hero--arrows{
+    /* position: relative; */
+    margin-top: 250px;
+    display: flex;
+    justify-content: space-between;
+   
+}
 .hero--left-slider-arrows{
-    position: absolute;
-    top: 40vh;
-    left: 250px;
-    right: 0;
-    bottom: 0;
     opacity: 0.4;
-}
+} 
 .hero--right-slider-arrows{
-    position: absolute;
-    top: 40vh;
-    right: 250px;
-    bottom: 0;
     opacity: 0.4;
-}
+} 
 #header--hero-image-header{
     color: #ffffff;
     font-family: 'Open Sans', sans-serif;
@@ -156,8 +155,6 @@ body{
     max-width: 300px;
     word-wrap: break-word;
 }
-
-
 /* home page css */
 .design-section{
     margin-top: 20px;
@@ -275,12 +272,14 @@ footer{
 .post-content{
     margin-top: 20px;
 }
-.post-text{
+.post-content p{
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
     font-size: 14px;
     color: #62585f;
     line-height: 21px;
+    word-break: break-all;
+    white-space: normal;
 }
 .post-img{
     width: 620px;
@@ -289,6 +288,13 @@ footer{
     margin-top: 10px;
     margin-bottom: 10px;
 }
+.post-author-date span{
+    margin-left: 0;
+}
+
+.post-section-top-container{
+    margin-top: 20px;
+}
 .post-section-container{
     margin-left: -30px;
 }
@@ -296,7 +302,47 @@ footer{
     margin-bottom: 20px;
     border-bottom: 1px solid #62585f;
 }
+.post-text-tags{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size:13px;
+}
+#TB_closeWindowButton{
+    position: absolute;
+    left: auto;
+    right: 0;
+    width: 29px;
+    height: fit-content;
+    border: 0;
+    padding: 0;
+    background: none;
+    cursor: pointer;
+    outline: none;
 
+
+}
+.tb-close-btn-div{
+    background-color: #fff;
+    width: 100%;
+
+}
+.tb-img-div{
+    padding: 30px;
+    margin-right: 0;
+    background-color: #fff;
+}
+.screen-render-text{
+    border: 0;
+    clip: rect(1px, 1px, 1px, 1px);
+    clip-path: inset(50%);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute !important;
+    width: 1px;
+    word-wrap: normal !important;
+}
 /*Comment template css comments.php*/
 .comments--title{
     font-family: "Open Sans", sans-serif;
@@ -352,6 +398,9 @@ footer{
     margin-top: 10px;
 }
 .comment-form-comment{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 14px;
     max-width: 613px;
     height: 90px;
     background-color: #ffffff;
@@ -371,7 +420,7 @@ footer{
     font-family: "Open Sans", sans-serif;
     font-weight: 400;
     font-size: 14px;
-    width: 195px;
+    width: 190px;
     height: 30px;
     background-color: #ffffff;
     border: 1px solid #62585f;
@@ -385,8 +434,9 @@ footer{
 }
 .comment-name-section,
 .comment-email-section{
-    margin-right: 12px;
+    margin-right: 10px;
 }
+
 /* right division on single post page*/
 .single-post-right-div{
     margin-left: 20px;
@@ -397,9 +447,9 @@ footer{
 .sidebar-container{
     margin-top: 25px;
 }
-.sidebar-container h3 {
+.sidebar-container h5 {
     font-family: 'Open Sans', sans-serif;
-    font-weight: 400;
+    font-size: 25px;
     color: #62585f;
     text-shadow: 2px 2px #ffffff;
 }
@@ -425,8 +475,8 @@ footer{
     margin-top:30px;
 }
 .related-post--img{
-    height: 45px;
-    width: 45px;
+    height: 50px;
+    width: 50px;
     border-radius: 3px;
 }
 .related-post-text{
@@ -440,14 +490,28 @@ footer{
     line-height: 21px;
     margin-left: 0;
 }
+.post-span-bottom{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 400;
+    font-size: 12px;
+    display: block;
+    max-width: 100%;
+}
 
 .post-content-tittle:hover{
     color: #ef4634;
 }
 .related-post-single{
     display: flex;
+    margin-bottom: 5px;
 }
 /* archive sidebar css */
+.archive-text{
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    color: #62585f;
+    }
 ul{
     list-style-type: none;
     margin: 0;
@@ -466,6 +530,7 @@ li:before {
 .follow-us-sidebar-header{
     display: flex;
    justify-content: space-between;
+
 }
 #btn-follow-us{
     font-family: "Open Sans", sans-serif;
@@ -474,7 +539,7 @@ li:before {
     height: fit-content;
     align-self: center;
     float: right;
-    margin-top: 10px;
+    margin-top: 6px;
 }
 .icon-twitter{
     color: #1da1f2;
@@ -486,12 +551,22 @@ li:before {
 .follow-us-text{
     margin-left: 5px;
 }
+
+.follow-us-text span{
+    margin: 0;
+}
 .follow-us-activity-time{
     position: absolute;
     right: 15px;
 }
 .follow-us-user-info{
     display: flex;
+}
+p{
+    font-family: "Open Sans", sans-serif;
+    font-weight: 400;
+    font-size: 13px;
+
 }
 
 /*find us on facebook sidebar*/
@@ -598,20 +673,23 @@ li:before {
 
 
 /*Blog page css */
+.blog-container{
+    margin-top: 20px;
+}
 .blog-container-left{
     margin-left: -12px;
-    margin-top: 20px;
 }
 .blog-single{
     margin-top: 20px;
 }
-.blog-list-header{
+.blog-list-header h2{
     font-family: "Open Sans", sans-serif;
-    font-weight: 600;
+    font-weight: 400;
     font-size: 45px;
     color: #62585f;
     text-shadow: 2px 2px #ffffff;
     border-bottom: 1px solid #62585f;
+    padding-bottom: 10px;
     max-width: 620px;
 }
 .blog-header-box h4{
@@ -630,9 +708,15 @@ li:before {
 .blog-header-box-date p{
     font-size: 25px;
 }
+.post-content-para p{
+    word-break: break-all;
+    white-space: normal;
+}
 .blog-header-box-date span{
     font-size: 14px;
     display: block;
+    width: fit-content;
+    margin-left: 0;
 }
 .blog-header-box-title h4{
     font-family: "Open Sans", sans-serif;
@@ -658,13 +742,9 @@ li:before {
 .blog-header-box-container:hover{
     background-color: #ef4634;
 }
-.post-image{
-    width: 220px;
-    height: 153px;
-    border-radius: 10px;
-}
 .post-comment{
-    float: right;
+    position: absolute;
+    right: 0;
 }
 .post-data{
     font-family: "Open Sans", sans-serif;
@@ -672,8 +752,21 @@ li:before {
     font-size: 13px;
     display: flex;
 }
+.post-image{
+    width: 220px;
+    height: 153px;
+    min-width: 220px;
+    max-height: 153px;
+    border-radius: 10px;
+}
+
 .post-text-content{
     margin-left: 10px;
+
+}
+.post-content-para{
+    max-height: 90px;
+    overflow: hidden;
 }
 .post-text-content p, .blog-header-box-date p{
     margin: 0;
@@ -683,7 +776,13 @@ li:before {
 .post-header-content{
     border-bottom: 1px solid #62585f;
     margin-bottom: 10px;
+    position:relative;
 }
+.post-header-content p{
+    max-width: 300px;
+    word-wrap: break-word;
+}
+
 .post-read-more{
     font-size: 14px;
     color: #ef4634;
@@ -693,11 +792,13 @@ li:before {
     display: flex;
     justify-content: center;
 }
-.post-pagination-button{
+#paginate-button a{
+    color: black;
+    border: 1px solid ;
+    padding: 7px;
     font-family: "Open Sans", sans-serif;
     font-weight: 600;
     font-size: 16px;
-    display: block;
     color: #222222;
     border-radius: 3px;
     background-color: #ffffff;
@@ -705,6 +806,12 @@ li:before {
     border: none;
     justify-self: center;
 }
+.post-pagination-buttons .current{
+    color: #fff;
+    background-color: #ef4634;
+    padding: 7px;
+}
+
 .post-pagination-button:hover{
     color: #ffffff;
     background-color: #ef4634;
@@ -736,9 +843,18 @@ li:before {
     padding: 10px;
     background-color: #222222;
     border-radius: 5px;
-    }
+    margin-right: 10px;
+}
 .portfolio-post-header--buttons:hover{
     background-color: #ef4634;
+}
+#portfolio-category-container a{
+    color: #ffffff;
+}
+#portfolio-category-container a:hover{
+    color: #ffffff;
+    text-decoration: none;
+
 }
 #portfolio-post-image-container{
     display: flex;
@@ -751,7 +867,6 @@ li:before {
     height: 210px;
     width: 315px;
     margin-top: 15px;
-
     opacity: 1;
     transition: .5s ease;
     backface-visibility: hidden;
@@ -779,9 +894,6 @@ li:before {
     opacity: 1;
 }
 
-#hover-image-icon{
-
-}
 .thickbox-link{
     display: block;
     font-family: 'Open Sans', sans-serif;
@@ -804,10 +916,16 @@ li:before {
 #thickbox-inline-division15{
     display: none;
 }
+
 .thickbox-slider-arrow{
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    margin-top: 15px;
+    height: fit-content;
+}
+.thickbox-slider-arrow {
+    margin-top: 10px;
+    padding: 0;
 }
 .portfolio-post--img-thickbox{
     border-radius: 10px;
@@ -828,6 +946,7 @@ li:before {
     width: 22px;
     height: 22px;
     opacity: 0.5;
+
 }
 
 

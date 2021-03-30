@@ -79,20 +79,20 @@ $comments_args = [
         //Author field
         'author' => '
 <div class="comment-name-section">
-<label for = "name" >Name</label> <br />
-<input id="name" name="name" class = "" aria-required="true" placeholder="">
+<label for = "author" >Name</label> <br />
+<input id="author" name="author" class = "" aria-required="true" placeholder="" required>
 </div>',
         //Email Field
         'email' => '
 <div class="comment-email-section">
 <label for = "email"  >Email</label> <br />
-<input id="email" name="email" placeholder="">
+<input id="email" name="email" placeholder="" required>
 </div>',
         //URL Field
         'url' => '
 <div class="comment-website-section">
-<label for = "website">Website</label> <br />
-<input id="website" name="website" placeholder="">
+<label for = "url">Website</label> <br />
+<input id="url" name="url" placeholder="">
 </div>',
         //Cookies
         'cookies' => '<input type="checkbox" style = "display: none">'
@@ -104,7 +104,7 @@ $comments_args = [
     'title_reply' => __( 'Post your Comment', 'designflytheme' ),
     'comment_field' => '<div><label for="comment">' . _x( '', 'noun' ) .
         '</label><br />
-<textarea id="comment" class="comment-form-comment" name="comment" rows = "8" cols = "10" aria-required="true"></textarea></div>',
+<textarea id="comment" class="comment-form-comment comment-textarea-section" name="comment" rows = "8" cols = "10" aria-required="true"></textarea></div>',
     'comment_notes_before' => '',
 ];
     comment_form($comments_args);

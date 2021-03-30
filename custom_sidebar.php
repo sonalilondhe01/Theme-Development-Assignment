@@ -4,7 +4,7 @@
 <!--  portfolio sidebar start -->
     <div class = "portfolio-container">
         <div  class = "sidebar-header">
-            <h3>Portfolio</h3>
+            <h5>Portfolio</h5>
         </div>
         <div class ="portfolio-images">
             <img class ="portfolio--img"
@@ -30,10 +30,7 @@
 
 <!--    related post sidebar start -->
     <div class = "related-post-sidebar related-post sidebar-margin-top">
-        <div class="sidebar-header">
-            <h3>Related Posts</h3>
-        </div>
-        <div class="related-post-content">
+              <div class="related-post-content">
             <div class = "related-post-single">
                 <img class ="related-post--img"
                      src="/wordpress_theme_development/wp-content/themes/designflytheme/images/home/image-1.png">
@@ -105,7 +102,7 @@
 <!--     popular post sidebar start -->
     <div class = "related-post sidebar-margin-top">
         <div class="sidebar-header">
-            <h3>Popular Posts</h3>
+            <h5>Popular Posts</h5>
         </div>
         <div class="related-post-content">
             <div class = "related-post-single">
@@ -182,7 +179,7 @@
 <!--    archive sidebar start-->
     <div class="archieve-content sidebar-margin-top">
         <div class="sidebar-header">
-            <h3>Archive</h3>
+            <h5>Archive</h5>
         </div>
         <div class="post-text archieve-list">
             <ul>
@@ -194,7 +191,7 @@
     <!--    archive sidebar end-->
     <div class="sidebar-margin-top">
         <div class="follow-us-sidebar-header sidebar-header">
-            <h3>Latest Tweet</h3>
+            <h5>Latest Tweet</h5>
             <button id = "btn-follow-us">
                 <i class="fa fa-twitter icon-twitter" aria-hidden="true"></i> Follow us
                 </button>
@@ -284,3 +281,5 @@
     </div>
     <!--    find us on facebook sidebar end-->
 </div>
+<?php
+
